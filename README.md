@@ -172,6 +172,7 @@
 
   <!-- Menú -->
   <nav id="nav-menu">
+    <button onclick="showSection('integrantes', this)">Equipo</button>
     <button class="active" onclick="showSection('objetivos', this)">Objetivos</button>
     <button onclick="showSection('matematicas', this)">Matemáticas II</button>
     <button onclick="showSection('lengua', this)">Lengua y Comunicación</button>
@@ -180,32 +181,16 @@
     <button onclick="showSection('sociales', this)">Ciencias Sociales II</button>
     <button onclick="showSection('energia', this)">Conservación de Energía</button>
     <button onclick="showSection('programacion', this)">Especialidad</button>
-    <button onclick="showSection('integrantes', this)">Equipo</button>
 
   </nav>
-   <section id="integrantes" class="section active">
-    <h2>Objetivos Generales</h2>
+   <section id="integrantes" class="section">
+    <h2>Integrantes del equipo</h2>
     <ul>
-      <li>Karen marlene servin vazquez.</li>
-      <li>Específicos:</li>
-      <li>1.Comprender la separación de residuos sólidos: 
-Brindar capacitación a la comunidad escolar para que comprenda la
-importancia y el proceso adecuado de separación de residuos sólidos.</li>
-      <li>2.Practicar la separación responsable:
-Implementar estrategias (como el aprendizaje basado en retos)
-para garantizar la separación efectiva de residuos sólidos en el centro
-escolar y en las ubicaciones elegidas para intervenir en la comunidad.</li>
-      <li>3.Distribuir residuos a empresas recicladoras:
-Gestionar eficientemente los residuos sólidos, promoviendo distribución a
-empresas recicladoras locales.</li>
-      <li>4.Difundir los logros:
-Compartir las acciones y resultados obtenidos para sensibilizar y motivar a
-otros a separar los residuos, esto a través de los espacios digitales
-generados.</li>
-    </ul>
-    <div class="img-box">
-      <img src="https://www.gaceta.unam.mx/wp-content/uploads/2023/05/230522-aca5-des-f1-medio-ambiente-responsabilidad-todos.jpg" alt="Separación de residuos" />
-    </div>
+      <li>Servin Vazquez Karen Marlene.</li>
+      <li>Gutierrez Olivares Karla Natalia.</li>
+      <li>Yareli Monserrat Maldonado Sanchez.</li>
+      <li>Martinez Hernandez Sofia Yaneth.</li>
+      <li>Dominguez Castro Edwin Alberto.</li>
     </ul>
   </section>
 
@@ -243,7 +228,7 @@ generados.</li>
     </ul>
   </section>
 
-  <section id="matematicas" class="section">
+   <section id="matematicas" class="section">
     <h2>Pensamiento Matemático II</h2>
     <ul>
       <li>Como parte del desarrollo del pensamiento matemático, se llevó a cabo un proyecto donde los estudiantes participaron activamente en una iniciativa de recolección de latas de aluminio. El objetivo fue combinar el análisis matemático con acciones ambientales concretas, fomentando la conciencia ecológica y el uso práctico de datos estadísticos.</li>
@@ -271,7 +256,7 @@ generados.</li>
       <li>Este proyecto permitió a los estudiantes ver cómo las matemáticas no solo están en los libros, sino también en las acciones cotidianas. Desde leer gráficas, hacer cálculos, estimar ingresos, hasta analizar datos reales y proponer soluciones, lograron involucrarse de forma activa y responsable en una causa que también beneficia a su entorno..</li>
 
     </ul>
-    <h2>Gráfica: Latas recolectadas por grupo (CBTis 118 - Todos los semestres)</h2>
+ <h2>Gráfica: Latas recolectadas por grupo (CBTis 118 - Todos los semestres)</h2>
 
 <div style="max-width: 700px; font-family: Arial, sans-serif;">
 
@@ -718,27 +703,27 @@ generados.</li>
 
   <div class="grid-imagenes">
     <div class="imagen-box">
-      <img src="c:\Users\Alumno01\Downloads\WhatsApp Image 2025-06-16 at 11.44.16 AM.jpeg" alt="Codigo">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.17 AM.jpeg" alt="Codigo">
       <div class="texto-hover">Código</div>
     </div>
     <div class="imagen-box">
-      <img src="c:\Users\Alumno01\Downloads\WhatsApp Image 2025-06-16 at 11.44.16 AM (1).jpeg" alt="Sección de reciclaje">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.20 AM.jpeg" alt="Sección de reciclaje">
       <div class="texto-hover">Código</div>
     </div>
     <div class="imagen-box">
-      <img src="c:\Users\Alumno01\Downloads\WhatsApp Image 2025-06-16 at 11.44.16 AM (2).jpeg" alt="Estudiantes separando residuos">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.18 AM.jpeg" alt="Estudiantes separando residuos">
       <div class="texto-hover">Parte inicial</div>
     </div>
     <div class="imagen-box">
-      <img src="c:\Users\Alumno01\Downloads\WhatsApp Image 2025-06-16 at 11.44.16 AM (3).jpeg" alt="Gráfica interactiva del sitio">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.18 AM (1).jpeg" alt="Gráfica interactiva del sitio">
       <div class="texto-hover">Apartados </div>
     </div>
     <div class="imagen-box">
-      <img src="c:\Users\Alumno01\Downloads\WhatsApp Image 2025-06-16 at 11.44.16 AM (4).jpeg" alt="Contenedores rotulados">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.19 AM.jpeg" alt="Contenedores rotulados">
       <div class="texto-hover">Diseño finales de los apartados </div>
     </div>
     <div class="imagen-box">
-      <img src="c:\Users\Alumno01\Downloads\WhatsApp Image 2025-06-16 at 11.44.16 AM (5).jpeg" alt="Página de evidencias">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.19 AM (1).jpeg" alt="Página de evidencias">
       <div class="texto-hover">Diseño final</div>
     </div>
   </div>
@@ -829,7 +814,7 @@ generados.</li>
     </ul>
   </section>
 
-  <section id="energia" class="section">
+  <section id= "energia" class="section">
     <h2>Conservación de Energía</h2>
     <ul>
       <section class="proyecto-ecoladrillos">
@@ -837,7 +822,7 @@ generados.</li>
   <div class="contenido-proyecto">
     <div class="video-container" tabindex="0" aria-label="Video del proyecto ecoladrillos">
       <video id="ecoladrillosVideo" controls muted preload="metadata" poster="imagenes/ecoladrillos-poster.jpg" aria-describedby="video-desc">
-        <source src="c:\Users\Alumno01\Downloads\WhatsApp Video 2025-06-16 at 9.21.46 AM.mp4" type="video/mp4" />
+      <source src="videos/ecoladrillos.mp4" type="video/mp4" />
         Tu navegador no soporta el elemento de video.
       </video>
       <button id="playPauseBtn" aria-pressed="false" aria-label="Reproducir video">
@@ -1060,7 +1045,7 @@ generados.</li>
   <h2>Especialidad en Programación</h2>
   <ul>
     <li>MANEJO DE RESIDUOS SOLIDOS .</li>
-    <li>nuestro programa puede ayudar a la empresa a optimizar la asiganacion de recursos de recursos,evitando el uso inecesario de lectricidad agua o materiales
+    <li>Nuestro programa puede ayudar a la empresa a optimizar la asiganacion de recursos de recursos,evitando el uso inecesario de lectricidad agua o materiales
         Aparte la reduccion de energia aumentaria aun mas .</li>
   </ul>
   <!-- Más contenido de programación -->
@@ -1073,7 +1058,7 @@ generados.</li>
 </section>
 
 <footer>
-  &copy; 2025 Proyecto Ambiental CBTis 118 - Todos los derechos reservados
+  &copy; 2025 Proyecto Ambiental CBTis 118 - CULTURA DIGITAL
 </footer>
 
 <script>
