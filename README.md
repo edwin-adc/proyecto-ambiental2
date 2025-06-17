@@ -1,3 +1,903 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Ambiental CBTis 118</title>
+  <style>
+    /* Estilos */
+    :root {
+      --dark-bg: #050505;
+      --accent: #00e676;
+      --text: #f1f1f1;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text);
+    }
+    /* Portada */
+    .hero {
+      background: url('https://media.istockphoto.com/id/1402801804/es/foto/vista-de-la-naturaleza-de-cerca-de-las-palmeras-y-el-fondo-de-la-monstera-y-la-hoja-de-helecho.jpg?s=612x612&w=0&k=20&c=U2xApVAPMnfv2dGluOXMKuL-gEXbbTTAsXNQZxFBmdQ=') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      text-shadow: 2px 2px 10px #000;
+      animation: zoomFade 3s ease;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.5rem;
+    }
+    /* Menú */
+    nav {
+      background-color:#000000ef;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 0 15px #00e676aa;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: var(--text);
+      padding: 14px 28px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.4s;
+      position: relative;
+      margin: 4px;
+      border-radius: 6px;
+    }
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0%;
+      height: 3px;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+      border-radius: 3px;
+    }
+    nav button:hover::after,
+    nav button.active::after {
+      width: 100%;
+    }
+    nav button:hover,
+    nav button.active {
+      color: var(--accent);
+      background-color: #003d1f;
+      box-shadow: 0 0 10px var(--accent);
+    }
+    /* Secciones */
+    .section {
+      display: none;
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #00e676cc;
+      padding: 30px 40px;
+      animation: slideFade 1s ease;
+    }
+    .section.active {
+      display: block;
+    }
+    h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    ul {
+      list-style: none;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    ul li::before {
+      margin-right: 8px;
+    }
+    .img-box {
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 10px #00e67688;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .img-box img {
+      width: 100%;
+      display: block;
+      transition: transform 0.7s ease, filter 0.5s ease;
+    }
+    .img-box:hover img {
+      transform: scale(1.08);
+      filter: brightness(1.15);
+    }
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+    @keyframes zoomFade {
+      from {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes slideFade {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Portada -->
+  <div class="hero">
+    <h1>Proyecto Ambiental CBTis 118</h1>
+    <p>Separación Responsable de Residuos Sólidos y Desarrollo de Hábitos Conscientes de consumo en el CBTis 118 y la comunidad.</p>
+  </div>
+
+  <!-- Menú -->
+  <nav id="nav-menu">
+    <button onclick="showSection('integrantes', this)">Equipo</button>
+    <button class="active" onclick="showSection('objetivos', this)">Objetivos</button>
+    <button onclick="showSection('matematicas', this)">Matemáticas II</button>
+    <button onclick="showSection('lengua', this)">Lengua y Comunicación</button>
+    <button onclick="showSection('ingles', this)">Inglés II</button>
+    <button onclick="showSection('cultura', this)">Cultura Digital II</button>
+    <button onclick="showSection('sociales', this)">Ciencias Sociales II</button>
+    <button onclick="showSection('energia', this)">Conservación de Energía</button>
+    <button onclick="showSection('programacion', this)">Especialidad</button>
+
+  </nav>
+   <section id="integrantes" class="section">
+    <h2>Integrantes del equipo</h2>
+    <ul>
+      <li>Servin Vazquez Karen Marlene.</li>
+      <li>Gutierrez Olivares Karla Natalia.</li>
+      <li>Yareli Monserrat Maldonado Sanchez.</li>
+      <li>Martinez Hernandez Sofia Yaneth.</li>
+      <li>Dominguez Castro Edwin Alberto.</li>
+    </ul>
+  </section>
+
+  <!-- Secciones -->
+  <section id="objetivos" class="section active">
+    <h2>Objetivos Generales</h2>
+    <ul>
+      <li>La comunidad escolar del CBTis 118(estudiantes,
+personal administrativo y docentes) fomentan en la
+comunidad cercana al plantel la conciencia y la
+práctica sobre la separación de residuos sólidos a
+partir de la difusión, práctica y desarrollo de hábitos
+de consumo conscientes que disminuyan la
+generación de dichos residuos tanto en la escuela
+como en la comunidad.</li>
+      <li>Específicos:</li>
+      <li>1.Comprender la separación de residuos sólidos: 
+Brindar capacitación a la comunidad escolar para que comprenda la
+importancia y el proceso adecuado de separación de residuos sólidos.</li>
+      <li>2.Practicar la separación responsable:
+Implementar estrategias (como el aprendizaje basado en retos)
+para garantizar la separación efectiva de residuos sólidos en el centro
+escolar y en las ubicaciones elegidas para intervenir en la comunidad.</li>
+      <li>3.Distribuir residuos a empresas recicladoras:
+Gestionar eficientemente los residuos sólidos, promoviendo distribución a
+empresas recicladoras locales.</li>
+      <li>4.Difundir los logros:
+Compartir las acciones y resultados obtenidos para sensibilizar y motivar a
+otros a separar los residuos, esto a través de los espacios digitales
+generados.</li>
+    </ul>
+    <div class="img-box">
+      <img src="https://www.gaceta.unam.mx/wp-content/uploads/2023/05/230522-aca5-des-f1-medio-ambiente-responsabilidad-todos.jpg" alt="Separación de residuos" />
+    </div>
+    </ul>
+  </section>
+
+   <section id="matematicas" class="section">
+    <h2>Pensamiento Matemático II</h2>
+    <ul>
+      <li>Como parte del desarrollo del pensamiento matemático, se llevó a cabo un proyecto donde los estudiantes participaron activamente en una iniciativa de recolección de latas de aluminio. El objetivo fue combinar el análisis matemático con acciones ambientales concretas, fomentando la conciencia ecológica y el uso práctico de datos estadísticos.</li>
+      <li>Para iniciar el proyecto, se aplicó una encuesta a los estudiantes con el propósito de conocer sus hábitos y disposición hacia el reciclaje. Algunas de las preguntas incluidas fueron:</li>
+      <li>¿Separas los residuos en casa?.</li>
+      <li>¿Tienes el hábito de reciclar?.</li>
+      <li>¿Estarías dispuesto/a a recolectar latas de aluminio?.</li>
+      <li>¿Qué crees que se puede hacer con el dinero obtenido por reciclar?.</li>
+      <li>A partir de los resultados, se elaboró un análisis que incluyó frecuencias, porcentajes y gráficas para visualizar los datos. La mayoría de los estudiantes mostró interés en participar, aunque también se identificó que muchos no reciclan de forma constante en sus hogares.</li>
+      <li>Se organizó una campaña de recolección de latas, dejando claro que no se trataba de consumir más bebidas enlatadas, sino de recolectar aquellas que ya están en circulación o que se encuentran tiradas. Los estudiantes comenzaron a traer latas separadas de sus casas o recolectadas del entorno.</li>
+      <li>Desde la perspectiva matemática, se llevaron a cabo cálculos como:</li>
+      <li>Total de kilos de latas recolectadas.</li>
+      <li>Promedios por alumno y por grupo.</li>
+      <li>Cálculo del ingreso económico generado por la venta de latas.</li>
+      <li>Con el dinero recaudado, se propuso una dinámica donde los estudiantes identificaron necesidades del aula de matemáticas y sugirieron cómo invertir esos recursos. Algunas ideas destacadas fueron:</li>
+      <li>Comprar material didáctico.</li>
+      <li>Adquirir juegos o recursos manipulativos.</li>
+      <li>Decorar el aula con murales matemáticos.</li>
+      <li>Estas propuestas también se analizaron matemáticamente, usando porcentajes de preferencia y estimaciones presupuestales.</li>
+      <li>Finalmente, se evaluó el impacto del proyecto en tres niveles:</li>
+      <li>Ecológico: Menor cantidad de latas tiradas, reducción de residuos en el entorno escolar.</li>
+      <li>Social: Mayor conciencia ambiental entre los estudiantes y sus familias.</li>
+      <li>Académico: Aplicación de conocimientos matemáticos en situaciones reales y toma de decisiones basada en datos.</li>
+      <li>Conclusión:.</li>
+      <li>Este proyecto permitió a los estudiantes ver cómo las matemáticas no solo están en los libros, sino también en las acciones cotidianas. Desde leer gráficas, hacer cálculos, estimar ingresos, hasta analizar datos reales y proponer soluciones, lograron involucrarse de forma activa y responsable en una causa que también beneficia a su entorno..</li>
+
+    </ul>
+ <h2>Gráfica: Latas recolectadas por grupo (CBTis 118 - Todos los semestres)</h2>
+
+<div style="max-width: 700px; font-family: Arial, sans-serif;">
+
+<div class="interactive-bar-chart" aria-label="Gráfica interactiva de grupos y semestres" role="img" aria-describedby="chart-desc">
+  <p id="chart-desc" class="visually-hidden">Gráfica interactiva mostrando especialidades, grupos y semestres con interacción táctil.</p>
+
+  <!-- Electrónica con grupos A y B -->
+  <div class="bar-item" tabindex="0" role="button" aria-pressed="false" aria-label="Electrónica">
+    <span class="bar-label">Electrónica</span>
+    <div class="bar-wrapper">
+      <div class="bar" data-percentage="90" style="--bar-color: linear-gradient(90deg, #2979ff, #1565c0);"></div>
+      <span class="percentage">0%</span>
+      <div class="tooltip" role="tooltip">Electrónica: 90%</div>
+    </div>
+    <div class="details" aria-hidden="true">
+      <ul>
+        <li>Grupo A
+          <ul>
+            <li>Semestre 2 - 50 alumnos</li>
+            <li>Semestre 4 - 50 alumnos</li>
+            <li>Semestre 6 - 50 alumnos</li>
+          </ul>
+        </li>
+        <li>Grupo B
+          <ul>
+            <li>Semestre 2 - 50 alumnos</li>
+            <li>Semestre 4 - 50 alumnos</li>
+            <li>Semestre 6 - 50 alumnos</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Puericultura con grupos A y B -->
+  <div class="bar-item" tabindex="0" role="button" aria-pressed="false" aria-label="Puericultura">
+    <span class="bar-label">Puericultura</span>
+    <div class="bar-wrapper">
+      <div class="bar" data-percentage="75" style="--bar-color: linear-gradient(90deg, #ff6f00, #ffab00);"></div>
+      <span class="percentage">0%</span>
+      <div class="tooltip" role="tooltip">Puericultura: 75%</div>
+    </div>
+    <div class="details" aria-hidden="true">
+      <ul>
+        <li>Grupo A
+          <ul>
+            <li>Semestre 2 - 50 alumnos</li>
+            <li>Semestre 4 - 50 alumnos</li>
+            <li>Semestre 6 - 50 alumnos</li>
+          </ul>
+        </li>
+        <li>Grupo B
+          <ul>
+            <li>Semestre 2 - 50 alumnos</li>
+            <li>Semestre 4 - 50 alumnos</li>
+            <li>Semestre 6 - 50 alumnos</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Logística solo grupo A -->
+  <div class="bar-item" tabindex="0" role="button" aria-pressed="false" aria-label="Logística">
+    <span class="bar-label">Logística</span>
+    <div class="bar-wrapper">
+      <div class="bar" data-percentage="60" style="--bar-color: linear-gradient(90deg, #00e676, #00c853);"></div>
+      <span class="percentage">0%</span>
+      <div class="tooltip" role="tooltip">Logística: 60%</div>
+    </div>
+    <div class="details" aria-hidden="true">
+      <ul>
+        <li>Grupo A
+          <ul>
+            <li>Semestre 2 - 50 alumnos</li>
+            <li>Semestre 4 - 50 alumnos</li>
+            <li>Semestre 6 - 50 alumnos</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Mecatrónica solo grupo A -->
+  <div class="bar-item" tabindex="0" role="button" aria-pressed="false" aria-label="Mecatrónica">
+    <span class="bar-label">Mecatrónica</span>
+    <div class="bar-wrapper">
+      <div class="bar" data-percentage="70" style="--bar-color: linear-gradient(90deg, #d50000, #9b0000);"></div>
+      <span class="percentage">0%</span>
+      <div class="tooltip" role="tooltip">Mecatrónica: 70%</div>
+    </div>
+    <div class="details" aria-hidden="true">
+      <ul>
+        <li>Grupo A
+          <ul>
+            <li>Semestre 2 - 50 alumnos</li>
+            <li>Semestre 4 - 50 alumnos</li>
+            <li>Semestre 6 - 50 alumnos</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Mecánica Industrial solo grupo A -->
+  <div class="bar-item" tabindex="0" role="button" aria-pressed="false" aria-label="Mecánica Industrial">
+    <span class="bar-label">Mecánica Industrial</span>
+    <div class="bar-wrapper">
+      <div class="bar" data-percentage="55" style="--bar-color: linear-gradient(90deg, #9c27b0, #6a1b9a);"></div>
+      <span class="percentage">0%</span>
+      <div class="tooltip" role="tooltip">Mecánica Industrial: 55%</div>
+    </div>
+    <div class="details" aria-hidden="true">
+      <ul>
+        <li>Grupo A
+          <ul>
+            <li>Semestre 2 - 50 alumnos</li>
+            <li>Semestre 4 - 50 alumnos</li>
+            <li>Semestre 6 - 50 alumnos</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .interactive-bar-chart {
+    max-width: 700px;
+    margin: 20px auto 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 22px;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: transform 0.3s ease;
+    position: relative;
+    background: #111;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+  .bar-item:focus {
+    outline: 3px solid #00e676;
+    outline-offset: 6px;
+  }
+  .bar-item.active {
+    transform: translateY(-12px);
+    box-shadow: 0 4px 10px #00e676aa;
+  }
+  .bar-label {
+    font-weight: 700;
+    color: #00e676;
+    font-size: 1.2rem;
+    user-select: none;
+    margin-bottom: 6px;
+  }
+  .bar-wrapper {
+    position: relative;
+    height: 28px;
+    background-color: #222;
+    border-radius: 16px;
+    overflow: visible;
+    box-shadow: inset 0 0 5px #000;
+  }
+  .bar {
+    height: 100%;
+    width: 0%;
+    background: var(--bar-color);
+    border-radius: 16px 0 0 16px;
+    box-shadow: 0 0 8px var(--bar-color);
+    transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .percentage {
+    margin-left: 10px;
+    font-weight: 600;
+    color: #151414;
+    min-width: 50px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 28px;
+    line-height: 28px;
+  }
+  .tooltip {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #00e676cc;
+    padding: 6px 12px;
+    border-radius: 12px;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    user-select: none;
+    box-shadow: 0 0 6px #00e676cc;
+  }
+  .bar-item.active .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-6px);
+    pointer-events: auto;
+    z-index: 10;
+  }
+  .details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+  .bar-item.active .details {
+    max-height: 500px; /* suficientemente alto para mostrar el contenido */
+    padding-top: 10px;
+  }
+  .details ul {
+    list-style: none;
+    padding-left: 10px;
+    margin: 0;
+  }
+  .details ul ul {
+    padding-left: 15px;
+  }
+  /* Visually hidden for accessibility */
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const bars = document.querySelectorAll('.interactive-bar-chart .bar');
+    const barItems = document.querySelectorAll('.interactive-bar-chart .bar-item');
+
+    // Animar ancho y porcentaje al cargar
+    bars.forEach(bar => {
+      const percent = parseInt(bar.getAttribute('data-percentage'));
+      setTimeout(() => {
+        bar.style.width = percent + '%';
+      }, 200);
+
+      // Animar número porcentaje
+      const percentageLabel = bar.nextElementSibling;
+      let current = 0;
+      const intervalTime = 2000 / percent;
+      const interval = setInterval(() => {
+        if(current >= percent) {
+          clearInterval(interval);
+          percentageLabel.textContent = percent + '%';
+        } else {
+          current++;
+          percentageLabel.textContent = current + '%';
+        }
+      }, intervalTime);
+    });
+
+    // Funcionalidad interacción click y tecla Enter/Space para expandir detalles
+    let activeItem = null;
+
+    function activateBar(barItem) {
+      if(activeItem) {
+        activeItem.classList.remove('active');
+        activeItem.setAttribute('aria-pressed', 'false');
+        activeItem.querySelector('.details').setAttribute('aria-hidden', 'true');
+      }
+      if(activeItem === barItem) {
+        activeItem = null;
+        return;
+      }
+      barItem.classList.add('active');
+      barItem.setAttribute('aria-pressed', 'true');
+      barItem.querySelector('.details').setAttribute('aria-hidden', 'false');
+      activeItem = barItem;
+    }
+
+    barItems.forEach(item => {
+      item.addEventListener('click', () => activateBar(item));
+      item.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateBar(item);
+        }
+      });
+    });
+  });
+</script>
+
+    </ul>
+    <div class="img-box">
+      <img src="https://www.derichebourgespana.com/wp-content/uploads/2024/07/Importancia-de-que-las-latas-sean-de-aluminio-para-su-reciclaje.jpg" alt="Análisis de datos" />
+    </div>
+    </ul>
+  </section>
+
+  <section id="lengua" class="section">
+    <h2>Lengua y Comunicación II</h2>
+    <div class="paec-container">
+      <h3>PAEC - Proyecto Aula Escuela Comunidad</h3>
+      <p><strong>PAEC - Proyecto Aula Escuela Comunidad</h2>
+
+    <p><strong>Integrantes:</strong></p>
+    <ul>
+      <li>Maldonado Sánchez Yareli Monserrat</li>
+      <li>Servín Vázquez Karen Marlene</li>
+      <li>Domínguez Castro Edwin Alberto</li>
+      <li>Gutiérrez Olivares Karla Natalia</li>
+      <li>Martínez Hernández Sofia Yaneth</li>
+    </ul>
+
+    <p><strong>Fecha:</strong> Junio 2025</p>
+    <p><strong>Materias:</strong> Lengua y Comunicación (Reseña), Cultura Digital (Página web)</p>
+
+    <h3>Descripción del Proyecto</h3>
+    <p>
+      El <strong>PAEC</strong>, o Proyecto Aula Escuela Comunidad, es una iniciativa que nace desde el aula con el objetivo de fortalecer los vínculos entre el entorno educativo y la sociedad que lo rodea. En este caso, el proyecto se centra en una problemática ambiental de gran relevancia: la <strong>gestión y reducción de residuos sólidos</strong> dentro del plantel <strong>CBTis 118</strong>.
+    </p>
+    <p>
+      Este proyecto busca fomentar la responsabilidad ambiental y social en la comunidad estudiantil mediante actividades prácticas como la recolección, clasificación, reciclaje y correcta disposición de residuos sólidos. A través de distintas asignaturas y enfoques pedagógicos, se promueve la participación activa del alumnado en acciones concretas que generan un impacto positivo tanto en el ambiente escolar como en la comunidad.
+    </p>
+
+    <h3>Objetivo General</h3>
+    <p>
+      Desarrollar una conciencia ecológica en los estudiantes del CBTis 118 mediante estrategias integrales que impulsen la separación adecuada de residuos sólidos, el reciclaje y el aprovechamiento de materiales reutilizables, mejorando así el entorno escolar y fomentando la colaboración comunitaria.
+    </p>
+
+    <h3>Objetivos Específicos</h3>
+    <ul>
+      <li>Identificar las principales fuentes de residuos dentro del plantel escolar.</li>
+      <li>Diseñar campañas de concientización y señalización bilingüe (español-inglés) para los contenedores de residuos.</li>
+      <li>Registrar evidencias fotográficas de alumnos que ya practican la separación de residuos.</li>
+      <li>Fomentar el uso de tecnologías digitales mediante la creación de un sitio web educativo sobre el tema.</li>
+      <li>Motivar la participación de la comunidad escolar y vecinos a través de actividades colaborativas.</li>
+    </ul>
+
+    <h3>Importancia del Proyecto</h3>
+    <p>
+      En el contexto actual, donde el cambio climático y la contaminación ambiental son temas urgentes, proyectos como el PAEC son fundamentales para construir una ciudadanía más consciente. Educar a los jóvenes sobre la correcta gestión de los residuos no solo mejora las condiciones del espacio que habitan, sino que también genera un efecto multiplicador en sus hogares y comunidades.
+    </p>
+    <p>
+      Además, esta propuesta promueve el trabajo en equipo, el pensamiento crítico y el uso de herramientas digitales para resolver problemas reales. Con estas actividades, los estudiantes comprenden que cada acción, por pequeña que sea, puede contribuir al cuidado del planeta.
+    </p>
+
+    <h3>Conclusión</h3>
+    <p>
+      Para que este proyecto tenga un impacto real y duradero, es necesario el compromiso de todos los actores educativos: directivos, docentes, estudiantes y personal administrativo. La colaboración de la comunidad cercana también es clave para ampliar los efectos positivos de esta iniciativa.
+    </p>
+    <p>
+      El PAEC busca dejar una huella más allá del aula. Pretende inculcar hábitos sostenibles que trasciendan al hogar, la calle y el entorno inmediato del CBTis 118. Solo con el esfuerzo conjunto podremos lograr un espacio escolar más limpio, ordenado y respetuoso con el medio ambiente. Este proyecto es una invitación a actuar, a educar y a transformar.
+    </p>
+
+    <div class="paec-imagen">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs3Uur7j_1A2qnPslAbEntuHTgNSqcBNBGtQ&s" alt="Latas recicladas" class="imagen-latas">
+    </div>
+  </div>
+</section>
+
+<style>
+  .paec-proyecto {
+    background-color: #fefffe;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 900px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #f3f3f3;
+    box-shadow: 0 0 10px rgb(253, 252, 252);
+  }
+
+  .paec-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fcfdfd;
+    text-align: center;
+  }
+
+  .paec-container h3 {
+    color: #379683;
+    margin-top: 30px;
+    font-size: 1.3rem;
+  }
+
+  .paec-container ul {
+    list-style: disc inside;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+
+  .paec-container p {
+    line-height: 1.7;
+    margin: 12px 0;
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .paec-container strong {
+    color: #f8f8f8;
+  }
+
+  .paec-imagen {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .imagen-latas {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(240, 229, 229, 0.877);
+  }
+</style>
+    </ul>
+</di>
+  </section>
+
+  <section id="ingles" class="section">
+    <h2>Inglés II</h2>
+    <ul>
+    </ul>
+  </section>
+
+  <section id="cultura" class="section">
+    <h2> <section class="galeria-cultura">
+  <h2>Galería del Proyecto PAEC</h2>
+  <p class="descripcion">A continuación se presentan imágenes de nuestra página web y actividades realizadas como parte del proyecto PAEC. Cada una representa momentos clave en la concientización sobre el reciclaje en nuestro plantel CBTIS 118.</p>
+
+  <div class="grid-imagenes">
+    <div class="imagen-box">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.17 AM.jpeg" alt="Codigo">
+      <div class="texto-hover">Código</div>
+    </div>
+    <div class="imagen-box">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.20 AM.jpeg" alt="Sección de reciclaje">
+      <div class="texto-hover">Código</div>
+    </div>
+    <div class="imagen-box">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.18 AM.jpeg" alt="Estudiantes separando residuos">
+      <div class="texto-hover">Parte inicial</div>
+    </div>
+    <div class="imagen-box">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.18 AM (1).jpeg" alt="Gráfica interactiva del sitio">
+      <div class="texto-hover">Apartados </div>
+    </div>
+    <div class="imagen-box">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.19 AM.jpeg" alt="Contenedores rotulados">
+      <div class="texto-hover">Diseño finales de los apartados </div>
+    </div>
+    <div class="imagen-box">
+      <img src="c:\Users\ADMIN\Downloads\WhatsApp Image 2025-06-16 at 10.44.19 AM (1).jpeg" alt="Página de evidencias">
+      <div class="texto-hover">Diseño final</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .galeria-cultura {
+    background: #e8f5e9;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    border: 3px solid #00e676;
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .galeria-cultura h2 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 10px;
+  }
+
+  .descripcion {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    color: #444;
+  }
+
+  .grid-imagenes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .imagen-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .imagen-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .imagen-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 230, 118, 0.4);
+  }
+
+  .imagen-box:hover img {
+    transform: scale(1.05);
+  }
+
+  .texto-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,230,118,0.85);
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+
+  .imagen-box:hover .texto-hover {
+    transform: translateY(0%);
+  }
+</style>
+
+
+  </section>
+    </section>
+  </section>
+
+  <section id="sociales" class="section">
+    <h2>Ciencias Sociales II</h2>
+    <ul>
+    </ul>
+  </section>
+
+  <section id= "energia" class="section">
+    <h2>Conservación de Energía</h2>
+    <ul>
+      <section class="proyecto-ecoladrillos">
+  <h2>Proyecto Ecoladrillos: Conservación de la Energía</h2>
+  <div class="contenido-proyecto">
+    <div class="video-container" tabindex="0" aria-label="Video del proyecto ecoladrillos">
+      <video id="ecoladrillosVideo" controls muted preload="metadata" poster="imagenes/ecoladrillos-poster.jpg" aria-describedby="video-desc">
+      <source src="videos/ecoladrillos.mp4" type="video/mp4" />
+        Tu navegador no soporta el elemento de video.
+      </video>
+      <button id="playPauseBtn" aria-pressed="false" aria-label="Reproducir video">
+        ▶️
+      </button>
+      <div id="videoEndedMsg" role="alert" aria-live="polite" class="hidden">¡Gracias por ver el video!</div>
+      <p id="video-desc" class="visually-hidden">Video sobre el proyecto de ecoladrillos mostrando su fabricación y uso para conservar la energía y el medio ambiente.</p>
+    </div>
+    <div class="info-proyecto">
+      <p>
+        El proyecto de <strong>ecoladrillos</strong> busca reducir la contaminación por plásticos reutilizando residuos no reciclables para fabricar bloques que pueden emplearse en diversas construcciones, ayudando a conservar la energía y proteger el medio ambiente.
+      </p>
+      <p>
+        Esta iniciativa permite a nuestra comunidad escolar aprender sobre la importancia de la reducción, reutilización y reciclaje, promoviendo prácticas responsables y sostenibles.
+      </p>
+      <p>
+        Con talleres y actividades prácticas, impulsamos la creación de ecoladrillos para disminuir la generación de residuos sólidos y favorecer un entorno más limpio y saludable.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .proyecto-ecoladrillos {
+    max-width: 1100px; /* aumenté el max ancho */
+    margin: 40px auto;
+    padding: 25px 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 3px solid #4caf50;
+    border-radius: 12px;
+    background: #e8f5e9;
+    box-shadow: 0 8px 20px rgba(76,175,80,0.2);
+  }
+
+  .proyecto-ecoladrillos h2 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+  }
+
+  .contenido-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInUp 1s 0.4s forwards;
+  }
+
+  .video-container {
+    position: relative;
+    flex: 1 1 600px; /* aumento tamaño base */
+    max-width: 720px; /* ancho máximo más grande */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(46,125,50,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .video-container:hover,
+  .video-container:focus-within {
+    transform: scale(1.07);
+    box-shadow: 0 12px 35px rgba(46,125,50,0.55);
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
   #playPauseBtn {
     position: absolute;
     bottom: 14px;
@@ -184,4 +1084,3 @@
     }
   }
 </script>
-
